@@ -10,7 +10,7 @@ void swap(int *a, int *b) {
         *b = *a ^ *b;
         *a = *a ^ *b;
     }
-    printf("After swapping: num1 = %d, num2 = %d\n", a, b);
+    printf("After swapping: num1 = %d, num2 = %d\n", *a, *b);
 }
 
 float remainder(float a, float b){
