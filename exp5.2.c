@@ -13,7 +13,7 @@ void swap(int *a, int *b) {
     printf("After swapping: num1 = %d, num2 = %d\n", *a, *b);
 }
 
-float remainder(float a, float b){
+float cal_remainder(float a, float b){
     float remainder;
     remainder=a/b;
     printf("Remainder of a/b is: %d\n",remainder);
@@ -23,7 +23,7 @@ int main(){
     printf("Enter two numbers:");
     scanf("%d %d",&i,&j);
     triangle_area(i,j);
-    swap(i,j);
-    remainder(i,j);
+    swap(&i,&j);
+    cal_remainder((float)i,(float)j);
     return 0;
 }
