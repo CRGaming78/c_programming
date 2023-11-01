@@ -14,10 +14,10 @@ void swap(int *a, int *b) {
 }
 
 float cal_remainder(float a, float b){
-    float remainder;
-    remainder=a/b;
+    float remainder=a / b;
     printf("Remainder of a/b is: %d\n",remainder);
 }
+
 int main(){
     int i,j;
     printf("Enter two numbers:");
