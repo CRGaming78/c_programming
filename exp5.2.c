@@ -11,11 +11,10 @@ void swap(int *a, int *b) {
         *a = *a ^ *b;
     }
     printf("After swapping: num1 = %d, num2 = %d\n", a, b);
-    return 0;
 }
 
-float remainder(int a, int b){
-    int remainder;
+float remainder(float a, float b){
+    float remainder;
     remainder=a/b;
     printf("Remainder of a/b is: %d\n",remainder);
 }
