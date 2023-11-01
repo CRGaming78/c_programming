@@ -1,14 +1,19 @@
-include<stdio.h>
+#include<stdio.h>
 int triangle_area(int base,int height){
     int area=0;
     area=0.5*height*base;
     printf("Area of triangle: %d\n",area);
 }
-void swap(int *c,int *d){
-    c^=d;
-    d^=c;
-    c^=d;
+void swap(int *a, int *b) {
+    if (a != b) {
+        *a = *a ^ *b;
+        *b = *a ^ *b;
+        *a = *a ^ *b;
+    }
+    printf("After swapping: num1 = %d, num2 = %d\n", a, b);
+    return 0;
 }
+
 float remainder(int a, int b){
     int remainder;
     remainder=a/b;
