@@ -7,7 +7,7 @@ struct date {
 };
 
 struct student_record {
-	char name[30];
+	char name[50];
 	long int Sap_id;
 	long int enroll;
 	struct date registration;
@@ -16,33 +16,29 @@ struct student_record {
 
 void main() {
 	int a,i;
-	printf("\nEnter the number of students: ");
+	printf("\nEnter the number of stutents: ");
 	scanf("%d",&a);
-	for(i=0;i<=a;i++) {
-	struct student_record s1;
-	printf("Student name: ");
-	scanf("%s", s1.name);
+	struct student_record s[a];
+	for(i=0;i<a;i++) {
+	printf("\nEnter details for student %d:\n", i + 1);
+	printf("\nStudent name: ");
+	scanf("%s", s[i].name);
 	printf("\nEnter SAP ID: ");
-	scanf("%d", &s1.Sap_id);
+	scanf("%d", &s[i].Sap_id);
 	printf("\nEnter enroll: ");
-	scanf("%d", &s1.enroll);
-	printf("\nEnter registration day: ");
-	scanf("%d", &s1.registration.day);
-	printf("\nEnter registration month: ");
-	scanf("%d", &s1.registration.month);
-	printf("\nEnter registration year: ");
-	scanf("%d", &s1.registration.year);
-	printf("\nEnter birth date: ");
-	scanf("%d", &s1.birth.day);
-	printf("\nEnter birth month: ");
-	scanf("%d", &s1.birth.month);
-	printf("\nEnter birth year: ");
-	scanf("%d", &s1.birth.year);
-	printf("\nStudent's Details");
-	printf("\nStudent's name: %s",s1.name);
-	printf("\nStudent's Sap ID: %d",s1.Sap_id);
-	printf("\nStudent's enroll no.: R%d",s1.enroll);
-	printf("\nStudent's registration(dd/mm/yyyy): %d/%d/%d",s1.registration.day,s1.registration.month,s1.registration.year);
-	printf("\nStudent's Birthday(dd/mm/yyyy): %d/%d/%d",s1.birth.day,s1.birth.month,s1.birth.year);
+	scanf("%d", &s[i].enroll);
+	printf("\nEnter registration (dd mm yyyy): ");
+	scanf("%d %d %d", &s[i].registration.day,&s[i].registration.month,&s[i].registration.year);
+	printf("\nEnter birthday (dd mm yyyy):");
+	scanf("%d %d %d", &s[i].birth.day, &s[i].birth.month, &s[i].birth.year);
 	}
+	printf("Entered student details:\n");
+    for (int i = 0; i < a; i++) {
+        printf("Student %d:\n", i + 1);
+        printf("Name: %s\n", s[i].name);
+        printf("SAP ID: %d\n", s[i].Sap_id);
+        printf("Enrollment Number: %d\n", s[i].enroll);
+        printf("Date of Registration: %d/%d/%d\n", s[i].registration.day, s[i].registration.month, s[i].registration.year);
+        printf("Date of Birth: %d/%d/%d\n", s[i].birth.day, s[i].birth.month, s[i].birth.year);
+    }
 }
