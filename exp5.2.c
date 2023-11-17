@@ -13,9 +13,9 @@ void swap(int *a, int *b) {
     printf("After swapping: num1 = %d, num2 = %d\n", *a, *b);
 }
 
-float cal_remainder(float a, float b){
+float remainder(int a, int b){
     float remainder=a / b;
-    printf("Remainder of a/b is: %d\n",remainder);
+    printf("Remainder of a/b is: %.2f\n",remainder);
 }
 
 int main(){
@@ -24,6 +24,6 @@ int main(){
     scanf("%d %d",&i,&j);
     triangle_area(i,j);
     swap(&i,&j);
-    cal_remainder((float)i,(float)j);
+    remainder(i,j);
     return 0;
 }
