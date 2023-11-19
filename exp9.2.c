@@ -27,10 +27,10 @@ void main() {
 	scanf("%d", &s[i].Sap_id);
 	printf("\nEnter enroll: ");
 	scanf("%d", &s[i].enroll);
-	printf("\nEnter registration (dd mm yyyy): ");
-	scanf("%d %d %d", &s[i].registration.day,&s[i].registration.month,&s[i].registration.year);
-	printf("\nEnter birthday (dd mm yyyy):");
-	scanf("%d %d %d", &s[i].birth.day, &s[i].birth.month, &s[i].birth.year);
+	printf("\nEnter registration (dd/mm/yyyy): ");
+	scanf("%d/%d/%d", &s[i].registration.day,&s[i].registration.month,&s[i].registration.year);
+	printf("\nEnter birthday (dd/mm/yyyy):");
+	scanf("%d/%d/%d", &s[i].birth.day, &s[i].birth.month, &s[i].birth.year);
 	}
 	printf("Entered student details:\n");
     for (int i = 0; i < a; i++) {
