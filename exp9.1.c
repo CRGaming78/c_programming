@@ -6,15 +6,15 @@ struct product {
     float amount;
 };
 int main() {
-    struct product purchased_product;
+    struct product purch_prod;
     printf("Enter product name: ");
-    scanf(" %s", purchased_product.name);
+    scanf(" %s", purch_prod.name);
     printf("Enter price per unit: ");
-    scanf("%f", &purchased_product.price);
+    scanf("%f", &purch_prod.price);
     printf("Enter number of quantities purchased: ");
-    scanf("%d", &purchased_product.qty_purchased);
-    purchased_product.amount = purchased_product.price * purchased_product.qty_purchased;
-    struct product *product_ptr = &purchased_product;
+    scanf("%d", &purch_prod.qty_purchased);
+    purch_prod.amount = purch_prod.price * purch_prod.qty_purchased;
+    struct product *product_ptr = &purch_prod;
     printf("\nProduct Details:");
     printf("Name: %s\n", product_ptr->name);
     printf("Price per unit: Rs%.2f\n", product_ptr->price);

@@ -1,8 +1,8 @@
 #include<stdio.h>
 void select_sort(int arr[], int x){
     int temp;
-    for(int i=0; i<(x-1); i++){
-        for (int j=i+1; j<x; j++){
+    for(int i=0;i<(x-1);i++){
+        for (int j=i+1;j<x;j++){
             if(arr[i]>arr[j]){
                 temp=arr[i];
                 arr[i]=arr[j];
