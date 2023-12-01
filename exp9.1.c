@@ -9,7 +9,7 @@ int main() {
     struct product purch_prod;
     printf("Enter product name: ");
     scanf(" %s", purch_prod.name);
-    printf("Enter price per unit: ");
+    printf("Enter price per unit: Rs ");
     scanf("%f", &purch_prod.price);
     printf("Enter number of quantities purchased: ");
     scanf("%d", &purch_prod.qty_purchased);
