@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 
 void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
@@ -39,6 +39,45 @@ int main() {
         printf("%d ", numbers[i]);
     }
     fclose(file);
+    printf("\n");
+    return 0;
+}
+
+
+
+
+*/
+#include <stdio.h>
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                arr[j] ^= arr[j + 1] ^= arr[j] ^= arr[j + 1];
+}
+int main() {
+    FILE *file;
+    int n;
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+    file = fopen("numbers.txt", "w+");
+    if (!file) {
+        printf("Error creating the file.\n");
+        return 1;
+    }
+    printf("Enter %d integers to write to the file:\n", n);
+    for (int i = 0, num; i < n; i++) {
+        scanf("%d", &num);
+        fprintf(file, "%d ", num);
+    }
+    rewind(file);
+    int numbers[n];
+    for (int i = 0; i < n; i++)
+        fscanf(file, "%d", &numbers[i]);
+    fclose(file);
+    bubbleSort(numbers, n);
+    printf("Sorted array in ascending order:\n");
+    for (int i = 0; i < n; i++)
+        printf("%d ", numbers[i]);
     printf("\n");
     return 0;
 }
